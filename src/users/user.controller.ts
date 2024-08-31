@@ -2,9 +2,9 @@ import { Request, Response, NextFunction } from 'express';
 
 import { UserService } from './user.service';
 import { validateRequest } from '../utils/helper/request_validator';
-import { SignUpDTO, SignInDTO, ResetPasswordDTO } from './user.dto';
-import { createJWT, verifyJWT } from '../utils/helper/jwt';
-import { APIError, BadRequestError, NotAuthorizedError } from '../utils/helper/custom_error';
+import { SignUpDTO, SignInDTO } from './user.dto';
+import { createJWT } from '../utils/helper/jwt';
+import { APIError } from '../utils/helper/custom_error';
 
 export class UserController {
   private readonly userService;

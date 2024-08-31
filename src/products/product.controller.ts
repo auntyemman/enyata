@@ -3,7 +3,6 @@ import { Request, Response, NextFunction } from 'express';
 import { ProductService } from './product.service';
 import { validateRequest } from '../utils/helper/request_validator';
 import { CreateProductDTO } from './product.dto';
-// import { APIError, BadRequestError, NotAuthorizedError } from '../utils/helper/custom_error';
 
 export class ProductController {
   private readonly productService;

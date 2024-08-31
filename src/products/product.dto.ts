@@ -1,12 +1,4 @@
-import {
-  IsString,
-  IsEmail,
-  IsNotEmpty,
-  MinLength,
-  IsStrongPassword,
-  Matches,
-  IsNumber,
-} from 'class-validator';
+import { IsString, IsNotEmpty, IsNumber } from 'class-validator';
 
 /*-------------------------------------------CreateProductDTO-------------------------------------------*/
 export class CreateProductDTO {

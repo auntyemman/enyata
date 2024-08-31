@@ -1,6 +1,6 @@
 import { ProductRepository } from './product.repository';
 import { IProduct } from './product.model';
-import { APIError, NotFoundError } from '../utils/helper/custom_error';
+import { NotFoundError } from '../utils/helper/custom_error';
 
 export class ProductService {
   private productRepository: ProductRepository;
