@@ -2,9 +2,8 @@
 
 ## Features
 User registration and authentication
-Requesting fuel delivery
-Tracking delivery status
-Managing user profile
+Product
+Order
 
 ## Tech Stack
 - **Backend:** Node.js, Express.js
@@ -13,6 +12,11 @@ Managing user profile
 - **Validation:** Class-validator for input validation
 - **Email Service:** Nodemailer for sending email notifications
 - **Security:** Helmet for HTTP header security, CORS for cross-origin resource sharing
+
+## Design Pattern
+- Domain Driven Development
+- Services layer pattern
+- Repository layer pattern
 
 ## Getting Started
 1. **Clone the repository:**
