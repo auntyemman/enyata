@@ -10,3 +10,4 @@ const userCont = bindMethods(userController);
 user.post('/auth/signup', userCont.signUp);
 user.post('/auth/login', userCont.login);
 user.get('/users/:id', authUser, userCont.getUser);
+user.put('/users/update', authUser, userCont.updateUser);

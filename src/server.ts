@@ -1,7 +1,6 @@
 import { App } from './app';
 import { pool } from './config/database';
 import { runMigration } from './utils/migrate';
-// import { eventListenersService } from './events/event-listeners.service';
 
 class Server {
   private readonly app: App;
@@ -13,7 +12,6 @@ class Server {
   async start() {
     try {
       await runMigration();
-      // eventListenersService;
       await pool.connect();
       this.app.start();
       console.log('Server started successfully.');

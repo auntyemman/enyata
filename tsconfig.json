@@ -12,6 +12,6 @@
       "experimentalDecorators": true,
       "emitDecoratorMetadata": true
     },
-    "include": ["src/**/*.ts"],
+    "include": ["src/**/*.ts", "src/scripts/copy-users-sql-files.ts"],
     "exclude": ["node_modules"]
 }

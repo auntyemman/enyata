@@ -12,6 +12,7 @@ class CreateOrderItemDTO {
 
   @IsNumber()
   @IsNotEmpty()
+  @IsOptional()
   price!: number;
 }
 

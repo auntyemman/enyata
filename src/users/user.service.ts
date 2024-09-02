@@ -1,7 +1,7 @@
 import { IUser } from './user.model';
 import { hashPassword, comparePasswords } from '../utils/helper/encrypt_password';
 import { UserRepository } from './user.repository';
-import { BadRequestError, NotFoundError } from '../utils/helper/custom_error';
+import { APIError, BadRequestError, NotFoundError } from '../utils/helper/custom_error';
 
 export class UserService {
   private readonly userRepo;
@@ -38,5 +38,13 @@ export class UserService {
       throw new NotFoundError('user not found');
     }
     return user;
+  }
+
+  async updateUser(userId: number, user: Partial<IUser>): Promise<IUser> {
+    const updatedUser = await this.userRepo.update(userId, user);
+    if (!user) {
+      throw new APIError('error updating user');
+    }
+    return updatedUser;
   }
 }

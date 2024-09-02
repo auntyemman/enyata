@@ -26,9 +26,10 @@ WORKDIR /usr/src/app
 COPY --from=build /usr/src/app/dist ./dist
 COPY --from=build /usr/src/app/node_modules ./node_modules
 COPY --from=build /usr/src/app/package*.json ./
+COPY --from=build /usr/src/app/.env ./.env
 
 # Expose the application port
-EXPOSE 1945
+EXPOSE 3000
 
 # Run the application
 CMD ["node", "dist/server.js"]

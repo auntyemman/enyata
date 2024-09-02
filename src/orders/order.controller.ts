@@ -62,5 +62,4 @@ export class OrderController {
       next(error);
     }
   }
-
 }

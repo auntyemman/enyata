@@ -5,6 +5,7 @@ import {
   MinLength,
   IsStrongPassword,
   Matches,
+  IsOptional,
 } from 'class-validator';
 
 /*-------------------------------------------SignUpDTO-------------------------------------------*/
@@ -50,4 +51,20 @@ export class ResetPasswordDTO {
       'Password must contain at least one digit, one lowercase, one uppercase letter, and one special character',
   })
   password!: string;
+}
+
+export class UpdateDTO {
+  @IsString()
+  @IsOptional()
+  name?: string;
+
+  @IsNotEmpty()
+  @IsString()
+  @MinLength(8)
+  @IsOptional()
+  @Matches(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).*$/, {
+    message:
+      'Password must contain at least one digit, one lowercase, one uppercase letter, and one special character',
+  })
+  password?: string;
 }

@@ -2,7 +2,7 @@ import { Request, Response, NextFunction } from 'express';
 
 import { UserService } from './user.service';
 import { validateRequest } from '../utils/helper/request_validator';
-import { SignUpDTO, SignInDTO } from './user.dto';
+import { SignUpDTO, SignInDTO, UpdateDTO } from './user.dto';
 import { createJWT } from '../utils/helper/jwt';
 import { APIError } from '../utils/helper/custom_error';
 
@@ -59,6 +59,21 @@ export class UserController {
         status: 'success',
         message: 'User fetched successfully',
         data: user,
+      });
+    } catch (error) {
+      next(error);
+    }
+  }
+
+  async updateUser(req: Request, res: Response, next: NextFunction): Promise<object | undefined> {
+    const { userId } = res.locals.user;
+    try {
+      const validated = await validateRequest(UpdateDTO, req.body);
+      const updatedUser = await this.userService.updateUser(userId, validated);
+      return res.status(200).json({
+        status: 'success',
+        message: 'user updated succesfully',
+        data: updatedUser,
       });
     } catch (error) {
       next(error);
